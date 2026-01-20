@@ -1,66 +1,55 @@
-# Vivado gitignore
+# ================================
+# Global ignores
+# ================================
+*.log
+*.jou
+*.str
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
 
-# root
-/*
-!.gitignore
-!README.md
-!LICENSE
-!project_info.tcl
-!proj/
-!repo/
+# ================================
+# Vivado generated files
+# ================================
+.vivado/
+*.Xil/
+*.cache/
+*.runs/
+*.hw/
+*.sim/
+*.ip_user_files/
+*.gen/
+*.srcs/.vivado/
+
+# Reports & logs
+reports/
+logs/
+
+# ================================
+# Vivado project files (IGNORE)
+# ================================
+*.xpr
+
+# ================================
+# Vivado sources (KEEP)
+# ================================
 !src/
-!scripts/
-!hw_handoff/
+!src/**
 
-# vivado workspace
-proj/*
+!src/hdl/**/*.v
+!src/hdl/**/*.sv
+!src/hdl/**/*.vhd
 
-# ip repository
-repo/**
-!repo/vivado-library
-repo/vivado-library/**
-!repo/local
-!repo/local/**
-!repo/cache
-repo/cache/**
-
-# version controlled sources
-src/**
-!src/bd
-src/bd/**
-!src/bd/*.tcl
-!src/constraints
-src/constraints/**
-!src/constraints/*.xdc
-!src/hdl
-src/hdl/**
-!src/hdl/*.v
-!src/hdl/*.sv
-!src/hdl/*.vhd
-!src/ip
-!src/ip/*
-src/ip/*/**
+!src/constraints/**/*.xdc
+!src/bd/**/*.tcl
 !src/ip/**/*.xci
-!src/other
 !src/other/**
 
-# hardware handoff
-hw_handoff/*
-!hw_handoff/*.xsa
-
-# maintain required directories
-!**/.keep
-
-# Vitis gitignore
-
-# ignore everything in workspace sub-dir
-/ws/*
-
-# except the cleanup scripts
-!/ws/cleanup.cmd
-!/ws/cleanup.sh
-
-# ignore Packages/ and wsdata/ created by Vitis
-/Packages
-/.wsdata
-dfx_runtime.txt
+# ================================
+# IP repositories
+# ================================
+repo/cache/
+repo/**/.Xil/
+rep
